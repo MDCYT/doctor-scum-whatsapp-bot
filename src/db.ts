@@ -84,7 +84,7 @@ class Db {
       `CREATE INDEX IF NOT EXISTS idx_sessions_active ON chat_sessions(wa_chat_id, is_active);`
     ];
 
-    const already = this.db.prepare('PRAGMA user_version').get().user_version as number;
+    const already = (this.db.prepare('PRAGMA user_version').get() as any).user_version as number;
     if (already === 0) {
       this.db.transaction(() => migrations.forEach((sql) => this.db.prepare(sql).run()))();
       this.db.prepare('PRAGMA user_version = 3').run();
