@@ -1,0 +1,26 @@
+{
+  "name": "whatsapp-doctor-scum-bot",
+  "version": "0.1.0",
+  "description": "Bot de WhatsApp (Doctor Scum) con Baileys, OpenAI y SQLite",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc -p .",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^6.6.0",
+    "better-sqlite3": "^9.0.0",
+    "dotenv": "^16.4.5",
+    "openai": "^4.70.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
+}
